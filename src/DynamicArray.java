@@ -7,6 +7,7 @@ public class DynamicArray {
     int[] Array;
     private int SIZE = 10;
     int pointer = -1;
+    private Exception IndexOutOfBoundsException;
 
     public DynamicArray() {
         this.Array = new int[SIZE];
@@ -24,36 +25,59 @@ public class DynamicArray {
             Array = temp;
         }
 
-        pointer++;
-        Array[pointer] = value;
+//        pointer++;
+        Array[++pointer] = value;
 
     }
+//    public void insertAt(int index,int value){
+////        if (Array[index]!=0){
+////            for(int i = )
+////        }
+////
+//
+//
+//
+//    }
 
 
-    public void removeItem(){
+    public void removeItem() {
         Array[pointer] = 0;
         pointer--;
     }
 
+    public void removeItemAt(int index) throws Exception {
+        if (index <= pointer && index > -1) {
+            Array[index] = 0;
+        } else if (Array[index] == 0) {
+            throw IndexOutOfBoundsException;
+        }
+
+    }
+
+    public int getSize() {
+        return pointer;
+    }
 
 
-//
-//    public void insertAt(int index,int value){
-//        if (Array[index]!=0){
-//            for(int i = )
-//        }
-//
-//
-//
+    public int getCapacity(){
+        return SIZE;
+    }
 
-//    }
 
-    public static void main(String[] args) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
+
+
+    public static void main(String[] args) throws Exception {
+//        ArrayList<Integer> arrayList = new ArrayList<>();
+//        arrayList.size();
 //        arrayList.
 
-//        DynamicArray dynamicArray = new DynamicArray();
-//        dynamicArray.add(12);
-//        System.out.println(Arrays.toString(dynamicArray.Array));
+//        System.out.println(arrayList);
+
+        DynamicArray dynamicArray = new DynamicArray();
+        dynamicArray.addItem(12);
+        dynamicArray.addItem(12);
+        System.out.println(Arrays.toString(dynamicArray.Array));
+        dynamicArray.removeItemAt(1);
+        System.out.println(Arrays.toString(dynamicArray.Array));
     }
 }
