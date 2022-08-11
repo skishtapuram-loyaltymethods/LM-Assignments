@@ -2,4 +2,6 @@
 .idea/
 out/production
 .vscode/
-target/
+target
+untitled/
+Assignments.iml
