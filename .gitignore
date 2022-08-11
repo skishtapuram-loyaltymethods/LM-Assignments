@@ -1,4 +1,5 @@
 #intelliJ
 .idea/
+.out/
 .vscode/
 target/
