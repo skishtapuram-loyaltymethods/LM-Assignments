@@ -1,7 +1,6 @@
-import java.util.ArrayList;
+package Arrays;
+
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Scanner;
 
 public class DynamicArray {
     int[] Array;
@@ -29,15 +28,19 @@ public class DynamicArray {
         Array[++pointer] = value;
 
     }
-//    public void insertAt(int index,int value){
-////        if (Array[index]!=0){
-////            for(int i = )
-////        }
-////
-//
-//
-//
-//    }
+    public void addItemAt(int index,int value) throws Exception{
+        if(index<= SIZE) {
+            for (int i = pointer; i >= index; i++) {
+                Array[i + 1] = Array[i];
+            }
+            Array[index] = value;
+            pointer++;
+        }
+        else {
+            throw IndexOutOfBoundsException;
+        }
+
+    }
 
 
     public void removeItem() {
@@ -46,12 +49,16 @@ public class DynamicArray {
     }
 
     public void removeItemAt(int index) throws Exception {
-        if (index <= pointer && index > -1) {
-            Array[index] = 0;
-        } else if (Array[index] == 0) {
-            throw IndexOutOfBoundsException;
-        }
 
+        if(index<=pointer) {
+            if (index <= pointer && index > -1) {
+                Array[index] = 0;
+            } else if (Array[index] == 0) {
+                throw IndexOutOfBoundsException;
+            }
+            pointer--;
+        }
+        else System.out.println("Unable to remove the Item");
     }
 
     public int getSize() {
@@ -78,6 +85,10 @@ public class DynamicArray {
         dynamicArray.addItem(12);
         System.out.println(Arrays.toString(dynamicArray.Array));
         dynamicArray.removeItemAt(1);
+        System.out.println(Arrays.toString(dynamicArray.Array));
+        dynamicArray.addItemAt(2,99);
+        dynamicArray.addItem(12);
+
         System.out.println(Arrays.toString(dynamicArray.Array));
     }
 }
