@@ -101,14 +101,5 @@ public class Main {
 
 
 
-    int findNum(int[][] arr, int num){
-        int row = 0;
-        int col = 0;
-        for (int i = 0; i < arr.length; i++) {
 
-
-        }
-
-        return 3;
-    }
 }
