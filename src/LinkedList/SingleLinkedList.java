@@ -139,11 +139,6 @@ public class SingleLinkedList {
         second.insertLast(14);
 
 
-        SingleLinkedList list = new SingleLinkedList();
-        for (int i = 7; i > 0; i--) {
-            list.insertLast(i);
-        }
-
 
     }
 
