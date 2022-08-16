@@ -1,3 +1,5 @@
+package TwoDArray;
+
 public class FindElementIN2D {
 //    Regular Logic
     public static boolean findElement(int[][] arr, int val){

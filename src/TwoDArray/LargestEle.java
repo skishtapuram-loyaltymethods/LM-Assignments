@@ -1,9 +1,9 @@
-import java.lang.reflect.Constructor;
+package TwoDArray;
 
 import static java.lang.Integer.MIN_VALUE;
 
 
-public class Main {
+public class LargestEle {
     public static void main(String[] args) {
        int[][] arr =
                {
@@ -12,7 +12,7 @@ public class Main {
                        {27 ,29 ,37, 48},
                        {32 ,33 ,39 ,50}
               };
-       int[] arr1 = {1,2,3,4,5,6,2,8,25,42};
+//       int[] arr1 = {1,2,3,4,5,6,2,8,25,42};
 
        secondMax();
 
