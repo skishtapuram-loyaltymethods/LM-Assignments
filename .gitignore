@@ -1,6 +1,10 @@
 #intelliJ
 .idea/
+<<<<<<< HEAD
 out/production
+=======
+.out/
+>>>>>>> 04b1ef1... Removed Unwanted Stuff
 .vscode/
 target
 untitled/
