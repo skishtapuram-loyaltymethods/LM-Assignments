@@ -1,5 +1,8 @@
 package Stack;
 
+import java.util.Deque;
+import java.util.Queue;
+
 class CustomStack {
     protected int[] data;
     private static final int DEFAULT_SIZE = 10;
@@ -46,4 +49,8 @@ class CustomStack {
         return data[pointer];
     }
 
+
+
+
+//    Queue<Integer> queue = new
 }
