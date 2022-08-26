@@ -5,18 +5,25 @@ import java.util.PriorityQueue;
 
 public class Queue {
     public static void main(String[] args) {
-        String name = "Gautham";
-        char[] cha = name.toCharArray();
-        for(char cha1 : cha){
-            System.out.println(cha1);
+//        String name = "Gautham";
+//        char[] cha = name.toCharArray();
+//        for(char cha1 : cha){
+//            System.out.println(cha1);
+//        }
+//
+//
+//        java.util.Queue queue = new LinkedList();
+//        for (int i = name.length()-1; i >= 0; i--) {
+//            queue.add(name.charAt(i));
+//            System.out.println();queue.poll();
+//        }
+
+//        java.util.Queue<Integer> queue1 = new LinkedList<>();
+        while(!false){
+            System.out.println("Hello");
+            return;
         }
 
-
-        java.util.Queue queue = new LinkedList();
-        for (int i = name.length()-1; i >= 0; i--) {
-            queue.add(name.charAt(i));
-            System.out.println();queue.poll();
-        }
 
 
 

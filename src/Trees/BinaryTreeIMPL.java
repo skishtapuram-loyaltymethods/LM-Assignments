@@ -72,6 +72,63 @@ public class BinaryTreeIMPL {
 
     }
 
+
+    //    static  void mirrorOfBT(Node nodeL,Node nodeR){
+//        if(nodeL.left.value == nodeR.right.value)
+//
+//    }
+//    static void topView(Node n) {
+//        hashSet.add(n.value);
+//        if (n != null) {
+//
+//            if (n.right == null && n.left == null) return;
+//            if (n.left != null) {
+//                Node N1 = n.left;
+//                hashSet.add(n.left.value);
+//                topView(N1);
+//            }  if (n.right != null) {
+//                Node N1 = n.right;
+//                hashSet.add(n.right.value);
+//                topView(N1);
+//            }
+//
+//        } else return;
+//    }
+
+    static void topView(Node n) {
+        hashSet.add(n.value);
+        if (n != null) {
+
+            if (n.right == null || n.left == null) return;
+
+
+            if (n.left != null) {
+                Node N1 = n.left;
+                hashSet.add(n.left.value);
+                topView(N1);
+            }
+            if (n.right != null) {
+                Node N1 = n.right;
+                hashSet.add(n.right.value);
+                topView(N1);
+            }
+
+        } else return;
+    }
+
+    static void left1(Node node) {
+        if (node == null) return;
+        hashSet.add(node.value);
+        left1(node.left);
+    }
+
+    static void right1(Node node) {
+        if (node == null) return;
+        hashSet.add(node.value);
+        right1(node.right);
+    }
+
+
     static void leftView(Node n) {
         hashSet.add(n.value);
         if (n != null) {
@@ -109,20 +166,53 @@ public class BinaryTreeIMPL {
     }
 
 
+    static void insertInBST(Node node, int val) {
+        if (node == null) return;
+
+        if (node.value > val) {
+            if (node.left == null) {
+                node.left = new Node(val);
+                return;
+            }
+
+            insertInBST(node.left, val);
+
+        } else if (node.value < val) {
+            if (node.right == null) {
+                node.right = new Node(val);
+                return;
+            }
+
+
+            insertInBST(node.right, val);
+
+        }
+
+    }
+
+
     static HashSet<Integer> hashSet = new HashSet<>();
 
 
     public static void main(String[] args) {
-        int[] nodes = new int[]{1, 2, 3, -1, -1, 6, -1, -1, 3, 4, -1, 6, -1, -1, -1};
-//{1, 2, 3, -1, 4, -1, -1, -1, 5, -1, -1};
-//
+        int[] nodes = new int[]{50, 49, 46, -1, -1, -1, 55, -1, -1};
 
+//{1, 2, 3, -1, 4, -1, -1, -1, 5, -1, -1};
+
+
+//
+//{1,2,3,-1,4,-1,-1,-1,6,-1,9,-1,-1}
+//leftView
         Node node = binaryTree(nodes);
-        rightView(node);
-        leftView(node);
-        System.out.println(hashSet);
+        insertInBST(node, 60);
+//        rightView(node);
+//        topView(node);
+//        left1(node);
+//        leftView(node);
+//        right1(node);
+//        System.out.println(hashSet);
 //        preorder(node);
-//        levelOrder(node);
+        levelOrder(node);
 //        System.out.println(node.left.value);
 //        System.out.println(node.left.left.left);
 
