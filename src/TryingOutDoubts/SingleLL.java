@@ -51,6 +51,8 @@ public class SingleLL {
             node.next = head;
             head.prev = node;
             head = node;
+
+
 //            tail.next = head;
 
         }
