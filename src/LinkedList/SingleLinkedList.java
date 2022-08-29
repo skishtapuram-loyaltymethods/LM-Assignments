@@ -1,13 +1,28 @@
+
 package LinkedList;
 
 public class SingleLinkedList {
-
     private Node head;
+
     private Node tail;
     private int size;
 
     public SingleLinkedList() {
         this.size = 0;
+    }
+
+    private class Node {
+        private int value;
+        private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
     }
 
     public void insertFirst(int val) {
@@ -54,10 +69,6 @@ public class SingleLinkedList {
     }
 
 
-
-
-
-
     public int deleteLast() {
         if (size <= 1) {
             return deleteFirst();
@@ -69,6 +80,7 @@ public class SingleLinkedList {
         tail.next = null;
         size--;
         return val;
+
     }
 
     public int delete(int index) {
@@ -86,7 +98,6 @@ public class SingleLinkedList {
         size--;
         return val;
     }
-
 
 
     public Node get(int index) {
@@ -108,23 +119,6 @@ public class SingleLinkedList {
     }
 
 
-
-    private class Node {
-        private int value;
-        private Node next;
-
-        public Node(int value) {
-            this.value = value;
-        }
-
-        public Node(int value, Node next) {
-            this.value = value;
-            this.next = next;
-        }
-    }
-
-
-
     public static void main(String[] args) {
         SingleLinkedList first = new SingleLinkedList();
         SingleLinkedList second = new SingleLinkedList();
@@ -137,7 +131,6 @@ public class SingleLinkedList {
         second.insertLast(2);
         second.insertLast(9);
         second.insertLast(14);
-
 
 
     }

@@ -16,6 +16,9 @@ public class BinaryTreeIMPL {
             this.value = value;
         }
 
+        public Node() {
+
+        }
     }
 
     static int index = -1;
@@ -165,9 +168,15 @@ public class BinaryTreeIMPL {
         } else return;
     }
 
+     void remove(Node node) {
+node = null;
+//
+    }
 
     static void insertInBST(Node node, int val) {
+        if (node.value == val) System.out.println("Already exits");
         if (node == null) return;
+
 
         if (node.value > val) {
             if (node.left == null) {
@@ -195,26 +204,31 @@ public class BinaryTreeIMPL {
 
 
     public static void main(String[] args) {
-        int[] nodes = new int[]{50, 49, 46, -1, -1, -1, 55, -1, -1};
+        int[] nodes = new int[]{50, 49, 46, 17, -1, 19, -1, -1, 47, -1, -1, -1, 55, -1, 60, -1, -1};
 
-//{1, 2, 3, -1, 4, -1, -1, -1, 5, -1, -1};
-
-
-//
-//{1,2,3,-1,4,-1,-1,-1,6,-1,9,-1,-1}
-//leftView
         Node node = binaryTree(nodes);
-        insertInBST(node, 60);
+        BinaryTreeIMPL binaryTreeIMPL = new BinaryTreeIMPL();
+        binaryTreeIMPL.remove(node);
+//        insertInBST(node, 35);
 //        rightView(node);
-//        topView(node);
-//        left1(node);
 //        leftView(node);
+//        topView(node);
+        // top-view second way of doing
+//        left1(node);
 //        right1(node);
-//        System.out.println(hashSet);
 //        preorder(node);
         levelOrder(node);
-//        System.out.println(node.left.value);
-//        System.out.println(node.left.left.left);
 
     }
+
+
+
+//    if (node.value == val) {
+//            if(node.left != null && node.right != null) node.right = new Node(70);
+//        }
+////        else {
+////            remove(node.left, val);
+////            remove(node.right, val);
+////        }
+//        return;
 }
